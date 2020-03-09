@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://RigidBody_hit_test.gd" type="Script" id=1]
+
+[sub_resource type="PhysicsMaterial" id=17]
+bounce = 0.6
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 3, 3, 3 )
+
+[sub_resource type="CubeMesh" id=9]
+size = Vector3( 6, 6, 6 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.140531, 0.589844, 0.0622101, 1 )
+
+[node name="GreenCube6" type="RigidBody"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.602769, 24.9266, -21.6551 )
+mass = 3.0
+physics_material_override = SubResource( 17 )
+gravity_scale = 3.0
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 9 )
+material/0 = SubResource( 12 )
